@@ -1,6 +1,8 @@
 import "./Meals.css";
 import { useGlobalContext } from "../../context";
 // can cherry pick which info we want to get from the context.jsx
+import { BsHandThumbsUp } from "react-icons/bs";
+// react icons, need to add library (bs)
 
 export default function Meals(){
 
