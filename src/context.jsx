@@ -4,23 +4,23 @@ import axios from "axios";
 
 const allMealsURl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 const randomMealsUrl = "https://www.themealdb.com/api/json/v1/1/random.php";
+
 const AppContext = React.createContext();
 
 const AppProvider = ({children}) => {
     // A provider will sit up as high as possible in the component tree so that multiple consumers can get the state and props from the provider
 
     useEffect(() => {
-        fetchData()
+        fetchMeals(allMealsURl)
     }, [])
 
-    const fetchData = async() => {
+    const fetchMeals = async(url) => {
         try {
-            const response = await fetch('https://randomuser.me/api')
-            const data = await response.json();
-            console.log(data);
+            const response = await axios(url)
+            console.log(response);
         } 
-        catch(error){
-            console.log(error)
+        catch(e){
+            console.log(e.response)
         }
     }
 
