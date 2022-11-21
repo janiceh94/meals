@@ -16,10 +16,10 @@ export default function Meals(){
                     //key from api : alias (we assign)
                     const {idMeal, strMeal:title, strMealThumb:image } = singleMeal
                     return <article key={idMeal} className="single-meal">
-                        <img src={image} className="img"/>
+                        <img src={image} className="img" alt="meal"/>
                         <footer>
                             <h5>{title}</h5>
-                            <button className="like-btn">Click Me</button>
+                            <button className="like-btn"><BsHandThumbsUp/></button>
                         </footer>
                     </article>
                 })}
