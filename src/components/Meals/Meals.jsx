@@ -1,5 +1,7 @@
+import "./Meals.css";
+
 export default function Meals(){
     return (
-        <div>Meaks</div>
+        <div>Meals</div>
     )
 }
