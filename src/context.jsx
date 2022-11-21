@@ -7,18 +7,19 @@ const AppProvider = ({children}) => {
     // A provider will sit up as high as possible in the component tree so that multiple consumers can get the state and props from the provider
 
     useEffect(() => {
-        const fetchData = async() => {
-            try {
-                const response = await fetch('https://randomuser.me/api')
-                const data = await response.json();
-                console.log(data);
-            } 
-            catch(error){
-                console.log(error)
-            }
-        }
         fetchData()
     }, [])
+
+    const fetchData = async() => {
+        try {
+            const response = await fetch('https://randomuser.me/api')
+            const data = await response.json();
+            console.log(data);
+        } 
+        catch(error){
+            console.log(error)
+        }
+    }
 
     return (
         <AppContext.Provider value={{name:"john"}}>
