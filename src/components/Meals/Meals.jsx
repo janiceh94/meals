@@ -4,13 +4,14 @@ import { useGlobalContext } from "../../context";
 
 export default function Meals(){
 
-    const context = useGlobalContext()
-    console.log(context);
+    const {meals} = useGlobalContext()
     //value from context.jsx -> AppContext.Provider
 
     return (
         <div>
-            Meals
+            {meals.map((single) => {
+                return <h4>Single meal</h4>
+            })}
         </div>
     )
 }

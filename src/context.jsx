@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // Context provides a way to pass data through the component tree without having to pass props down manually at every level
 import axios from "axios";
 
@@ -10,14 +10,17 @@ const AppContext = React.createContext();
 const AppProvider = ({children}) => {
     // A provider will sit up as high as possible in the component tree so that multiple consumers can get the state and props from the provider
 
+    const [meals, setMeals] = useState([]);
+
     useEffect(() => {
         fetchMeals(allMealsURl)
     }, [])
 
     const fetchMeals = async(url) => {
         try {
-            const response = await axios(url)
-            console.log(response);
+            const {data} = await axios(url)
+            setMeals(data.meals)
+            // console.log(response);
         } 
         catch(e){
             console.log(e.response)
@@ -25,7 +28,7 @@ const AppProvider = ({children}) => {
     }
 
     return (
-        <AppContext.Provider value={{name:"john"}}>
+        <AppContext.Provider value={{meals}}>
             {children}
             {/* children is our app */}
         </AppContext.Provider>
