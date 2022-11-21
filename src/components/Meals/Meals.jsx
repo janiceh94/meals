@@ -11,9 +11,10 @@ export default function Meals(){
         <div>
             <section className="section-center">
                 {meals.map((singleMeal) => {
+                    //key from api : alias (we assign)
                     const {idMeal, strMeal:title, strMealThumb:image } = singleMeal
                     return <article key={idMeal} className="single-meal">
-                        <img src={image} style={{width:"200px"}} className="img"/>
+                        <img src={image} className="img"/>
                         <footer>
                             <h5>{title}</h5>
                             <button className="like-btn">Click Me</button>
