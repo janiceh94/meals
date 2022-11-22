@@ -6,8 +6,14 @@ import { BsHandThumbsUp } from "react-icons/bs";
 
 export default function Meals(){
 
-    const {meals} = useGlobalContext()
+    const { loading, meals } = useGlobalContext()
     //value from context.jsx -> AppContext.Provider
+
+    if(loading){
+        return <section className="section">
+            <h4>Loading...</h4>
+        </section>
+    }
 
     return (
         <div>
