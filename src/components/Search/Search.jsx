@@ -16,6 +16,10 @@ export default function Search(){
             setSearchTerm(text)
         }
     }
+    const handleRandomMeal = () => {
+        setSearchTerm("")
+        fetchRandomMeal()
+    }
 
     return (
         <header className="search-container">
@@ -28,7 +32,7 @@ export default function Search(){
                     className="form-input"
                 />
                 <button type="submit" className="btn">Search</button>
-                <button type="button" className="btn btn-hipster" onClick={fetchRandomMeal}>Surprise Me!</button>
+                <button type="button" className="btn btn-hipster" onClick={handleRandomMeal}>Surprise Me!</button>
             </form>
         </header>
     )
