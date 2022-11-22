@@ -21,8 +21,12 @@ const AppProvider = ({children}) => {
         setLoading(true)
         try {
             const {data} = await axios(url)
-            setMeals(data.meals)
-            // console.log(response);
+            if(data.meals){
+                setMeals(data.meals)
+                // console.log(response);
+            } else {
+                setMeals([])
+            }
         } 
         catch(e){
             console.log(e.response)

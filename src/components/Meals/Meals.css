@@ -1,3 +1,10 @@
+.section{
+    padding: 3rem;
+    width: var(--view-width);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
 .section-center{
     padding: 3rem;
     width: var(--view-width);
